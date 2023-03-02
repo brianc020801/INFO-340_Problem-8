@@ -1,4 +1,5 @@
 import React from 'react'; //import React Component
+import { Link } from 'react-router-dom';
 
 export default function PetList(props) {
   let pets = props.pets || []; //handle if not provided a prop
@@ -25,7 +26,7 @@ function PetCard(props) {
         <div className="card-body">
           <h3 className="card-title">{pet.name}</h3>
           <p className="card-text">{pet.sex} {pet.breed}</p>
-          <button className="btn btn-primary">Meet {pet.name}</button>
+          <Link className="btn btn-primary" to={pet.name}>Meet {pet.name}</Link>
         </div>
       </div>
     </div>
